@@ -3,3 +3,5 @@ EN CMD INSTALAR LOS SIGUIENTES CAMPOS
 pip install googletrans==3.1.0a0
 pip install tk 
 pip install Pillow
+pip install SpeechRecognition
+pip install PyAudio
