@@ -5,3 +5,4 @@ pip install tk
 pip install Pillow
 pip install SpeechRecognition
 pip install PyAudio
+pip install pyttsx3

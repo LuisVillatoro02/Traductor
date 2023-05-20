@@ -10,6 +10,7 @@ from googletrans import Translator
 from tkinter import messagebox
 import webbrowser
 import speech_recognition as sr
+import pyttsx3
 
 
 root = tk.Tk()
@@ -64,6 +65,16 @@ def reconocimiento_voz():
             print("No se pudo reconocer el habla.")
         except sr.RequestError as e:
             print("Error en la solicitud: {0}".format(e))
+
+def reproducir():
+    texto_traducido = t2.get("0.5", "end-1c")
+    if texto_traducido != '':
+        engine = pyttsx3.init()
+        engine.say(texto_traducido)
+        engine.runAndWait()
+    else:
+        messagebox.showerror('Translate Life', 'No hay traducción para reproducir')
+
 
 img = ImageTk.PhotoImage(Image.open('img/Fondo2.png'))
 panel = tk.Label(root, image = img)
@@ -220,6 +231,9 @@ button.place(x=275,y=600)
 
 boton_hablar = Button(root, text="Hablar", relief=RIDGE, borderwidth=3, font=('Bahnschrift SemiCondensed', 20, 'normal'), cursor="hand2", command=reconocimiento_voz)
 boton_hablar.place(x=150, y=600)
+
+boton_reproducir = Button(root, text="Reproducir", relief=RIDGE, borderwidth=3, font=('Bahnschrift SemiCondensed', 20, 'normal'), cursor="hand2", command=reproducir)
+boton_reproducir.place(x=700, y=600)
 
 clear = Button(root,text="Limpiar",relief=RIDGE,borderwidth=3,font=('Bahnschrift SemiCondensed',20,'normal'),cursor="hand2",command=clear)
 clear.place(x=580,y=600)
