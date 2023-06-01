@@ -67,9 +67,15 @@ def reconocimiento_voz():
             print("Error en la solicitud: {0}".format(e))
 
 def reproducir():
-    texto_traducido = t2.get("0.5", "end-1c")
+    texto_traducido = t2.get("1.0", "end-1c")
     if texto_traducido != '':
         engine = pyttsx3.init()
+        
+        # Configuración de la voz y velocidad
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[1].id)  # Cambia el índice para seleccionar la voz deseada
+        engine.setProperty('rate', 130)  # Cambia el valor para ajustar la velocidad (100 es el valor predeterminado)
+        
         engine.say(texto_traducido)
         engine.runAndWait()
     else:
@@ -96,13 +102,13 @@ choose_langauge = ttk.Combobox(root, width = 18, textvariable = l, state='readon
 def link():
         webbrowser.open("http://powerful-thicket-14740.herokuapp.com/ShowLogin")
 def espa():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/MEspa")
+        webbrowser.open("https://drive.google.com/file/d/10reW64T7xSGkTkiIeJ_xl6ecQkQM4Ils/view?usp=drive_link")
 def en():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/MIngles")
+        webbrowser.open("https://drive.google.com/file/d/1ZPVH5KLuoL8cKiZxLtOSqi52IlCtcZeq/view?usp=drive_link")
 def ru():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/MArab")
+        webbrowser.open("https://drive.google.com/file/d/1AGPMKeHhe31gd1caCaon4onWfLHmtd6Z/view?usp=sharing")
 def ja():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/MJapo")
+        webbrowser.open("https://drive.google.com/file/d/1Eyz5b0DFVX0-fMiCNjxPuUC1m5MqVQrG/view?usp=sharing")
 def pag():
         webbrowser.open("http://powerful-thicket-14740.herokuapp.com/")
 
