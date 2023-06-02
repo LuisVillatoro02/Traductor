@@ -100,7 +100,7 @@ l = tk.StringVar()
 choose_langauge = ttk.Combobox(root, width = 18, textvariable = l, state='readonly',font=('Bahnschrift SemiCondensed',16,'normal')) 
   
 def link():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/ShowLogin")
+        webbrowser.open("http://translate_life_ia.test/")
 def espa():
         webbrowser.open("https://drive.google.com/file/d/10reW64T7xSGkTkiIeJ_xl6ecQkQM4Ils/view?usp=drive_link")
 def en():
@@ -110,7 +110,7 @@ def ru():
 def ja():
         webbrowser.open("https://drive.google.com/file/d/1Eyz5b0DFVX0-fMiCNjxPuUC1m5MqVQrG/view?usp=sharing")
 def pag():
-        webbrowser.open("http://powerful-thicket-14740.herokuapp.com/")
+        webbrowser.open("http://translate_life_ia.test/#contactanos")
 
 
 choose_langauge['values'] = (
